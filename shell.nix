@@ -6,7 +6,6 @@ let
   pre-commit-check = pre-commit-hooks.lib.${system}.run {
     src = ./.;
     hooks = {
-      nix-linter.enable = true;
       nixpkgs-fmt.enable = true;
       statix.enable = true;
     };
