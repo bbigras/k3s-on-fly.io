@@ -2,14 +2,14 @@
 
 buildGoModule rec {
   pname = "kine";
-  version = "0.9.3";
+  version = "0.9.9";
 
   src = fetchFromGitHub {
     owner = "k3s-io";
     repo = "kine";
     rev = "v${version}";
-    sha256 = "sha256-4Zv1IjyYLGMH6YcY4pgG4gGsj5j7YsP74Pz193Gq4tQ=";
+    sha256 = "sha256-NzulAVdweg2Gb5v0OXzni3GwX7/xQV+hqk6FfRzZ8K4=";
   };
 
-  vendorSha256 = "sha256-/uoSf46Ep3ppkeO9aUuRP/xNsh5GtM9e4ykmBthcuW8=";
+  vendorSha256 = "sha256-sDAMVy+usn35r4UVRBBzzZo+Ij4OAHUkbNoZgHTVp08=";
 }
