@@ -22,7 +22,7 @@ dockerTools.streamLayeredImage {
 
   contents = [
     bash
-    cacert
+    dockerTools.caCertificates
     coreutils
     fakeNss
   ];
