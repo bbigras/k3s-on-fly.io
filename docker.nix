@@ -21,7 +21,7 @@ dockerTools.streamLayeredImage {
   tag = "latest";
 
   contents = [
-    bash
+    dockerTools.binSh
     dockerTools.caCertificates
     coreutils
     fakeNss
