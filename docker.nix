@@ -5,7 +5,7 @@ with pkgs;
 let
   kine = callPackage ./kine.nix { };
 
-  my_k3s = (k3s.override { iptables = iptables-legacy; });
+  my_k3s = k3s.override { iptables = iptables-legacy; };
 
   procFile = writeTextFile {
     name = "Procfile";
