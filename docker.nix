@@ -23,15 +23,10 @@ dockerTools.streamLayeredImage {
   contents = [
     dockerTools.binSh
     dockerTools.caCertificates
+    dockerTools.usrBinEnv
     coreutils
     fakeNss
   ];
-
-  enableFakechroot = true;
-  fakeRootCommands = ''
-    mkdir -p /usr/bin
-    ln -snf /bin/env /usr/bin/env
-  '';
 
   config = {
     Env = [ "PATH=/bin:/run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin" ];
