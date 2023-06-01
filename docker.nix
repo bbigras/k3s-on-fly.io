@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, lastModifiedDate }:
 
 with pkgs;
 
@@ -19,6 +19,7 @@ in
 dockerTools.streamLayeredImage {
   name = "k3s";
   tag = "latest";
+  created = builtins.substring 0 8 lastModifiedDate;
 
   contents = [
     dockerTools.binSh

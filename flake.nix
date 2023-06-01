@@ -19,7 +19,7 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
 
-  outputs = { nixpkgs, flake-utils, pre-commit-hooks, ... }:
+  outputs = { self, nixpkgs, flake-utils, pre-commit-hooks, ... }:
     flake-utils.lib.eachDefaultSystem
       (system:
         let
@@ -29,7 +29,10 @@
         in
         {
           devShell = import ./shell.nix { inherit pkgs pre-commit-hooks system; };
-          packages.dockerImage = import ./docker.nix { inherit pkgs; };
+          packages.dockerImage = import ./docker.nix {
+            inherit pkgs;
+            inherit (self) lastModifiedDate;
+          };
         }
       );
 }
