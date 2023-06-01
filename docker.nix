@@ -37,7 +37,7 @@ dockerTools.streamLayeredImage {
       "--procfile"
       "${procFile}"
       "-r"
-      "kine"
+      "kine,k3s"
     ];
   };
 }
